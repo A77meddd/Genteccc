@@ -228,22 +228,7 @@ input[type="text"] {
   border-radius: 4px;
   border-color: #356cb0;
   transition: 0.5s;
-  pointer-events: none;
   z-index: 9;
-}
-
-input::placeholder {
-  color: #171717; /* لون النص الافتراضي */
-  opacity: 0.6; /* شفافية النص الافتراضي */
-}
-
-input:-webkit-autofill {
-  -webkit-text-fill-color: #0f0e0e; /* لون النص عند الإكمال التلقائي */
-  transition: background-color 5000s ease-in-out 0s;
-}s
-
-input:focus::placeholder {
-  color: transparent; /* إخفاء النص الافتراضي عند التركيز على الحقل */
 }
 
 
