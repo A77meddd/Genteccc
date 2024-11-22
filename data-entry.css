@@ -1,0 +1,364 @@
+/* تعيين خلفية باستخدام صورة DNA مع غمقان أكبر */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url('DNA.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* تنسيق حاوية الصفحة */
+.page {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(18, 16, 16);
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* تنسيق العنوان */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* تنسيق الحقول */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: #070707;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+/* تنسيق الأزرار */
+.btn {
+    --color: #5383c2; /* الأزرق الذي نستخدمه في التصميم */
+    --color2: #ffffff; /* النص الأبيض عند التمرير */
+    padding: 0.8em 1.75em;
+    margin: 20px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: .3px solid var(--color);
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 17px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+    
+}
+
+.btn::after, .btn::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color);
+}
+
+.btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+    color: var(--color2);
+}
+
+.btn:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+}
+
+
+.navbar {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .results-container {
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+.navbar.active {
+    display: block;
+}
+/* باقي التنسيق */
+body {
+    background: url('DNA.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: centeرr;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+    .page {
+        width: 90%;
+        padding: 30px;
+    }
+
+    button {
+        width: auto;
+        padding: 14px 20px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+}
+
+/* تحسين التركيز */
+:focus {
+    outline: 0;
+    border-color: #4d82ff;
+    box-shadow: 0 0 0 4px #2a4a8f;
+}
+
+input[type="text"] {
+  color: #0d0c0c; /* اجعل النص يظهر باللون الأبيض */
+  background-color: rgba(128, 128, 128, 0.2); /* اللون الخلفي للحقل */
+  background: #0f6fe5;
+  border-radius: 4px;
+  border-color: #356cb0;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+input::placeholder {
+  color: #171717; /* لون النص الافتراضي */
+  opacity: 0.6; /* شفافية النص الافتراضي */
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #0f0e0e; /* لون النص عند الإكمال التلقائي */
+  transition: background-color 5000s ease-in-out 0s;
+}s
+
+input:focus::placeholder {
+  color: transparent; /* إخفاء النص الافتراضي عند التركيز على الحقل */
+}
+
+
+/* From Uiverse.io by eslam-hany */ 
+.inputbox {
+  position: relative;
+  width: 100%; /* لتوسيع الحقل ليأخذ العرض الكامل */
+  margin-bottom: 15px; /* إضافة مسافة أسفل الحقل */
+}
+
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  top: 20.5px; /* تغيير الموضع ليظهر النص فوق الحقل */
+  padding: 0 10px;
+  font-size: 1em;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+  color: #f6f8fa;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0.75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: #0f6fe5;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~ i,
+.inputbox input:focus ~ i {
+  height: 44px;
+}
+
+ul {
+  list-style: none;
+}
+/* From Uiverse.io by mahiatlinux */ 
+:focus {
+  outline: 0;
+  border-color: #4d82ff;
+  box-shadow: 0 0 0 4px #2a4a8f;
+}
+
+.mydict div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.mydict input[type="radio"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.mydict input[type="radio"]:checked + span {
+  box-shadow: 0 0 0 0.0625em #4d82ff;
+  background-color: #1c2b4a;
+  z-index: 1;
+  color: #4d82ff;
+}
+
+label span {
+  display: block;
+  cursor: pointer;
+  background-color: #1e2635;
+  padding: 0.375em 0.75em;
+  position: relative;
+  margin-left: 0.0625em;
+  box-shadow: 0 0 0 0.0625em #4a5568;
+  letter-spacing: 0.05em;
+  color: #a0aec0;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+
+label:first-child span {
+  border-radius: 0.375em 0 0 0.375em;
+}
+
+label:last-child span {
+  border-radius: 0 0.375em 0.375em 0;
+}

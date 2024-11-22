@@ -1,0 +1,259 @@
+/* تعيين خلفية باستخدام صورة DNA مع غمقان أكبر */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url('DNA.jpg') no-repeat center center fixed; /* إضافة الخلفية */
+    background-size: cover; /* تغطية الخلفية كاملة */
+    color: #fff; /* نص أبيض ليتناسب مع الخلفية */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* لضمان تغطي الصفحة بالكامل */
+}
+
+/* تنسيق حاوية الصفحة */
+.page {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* تقليل غمقان الخلفية بنسبة 0.5 لتكون أكثر وضوحًا */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* توسيط المحتوى عموديًا */
+    align-items: center; /* توسيط المحتوى أفقيًا */
+}
+
+
+/* تنسيق العنوان */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* تنسيق الحقول */
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(18, 16, 16, 0.7); /* جعل خلفية الحقل أكثر وضوحًا مع شفافية أقل */
+    color: #fff; /* النص باللون الأبيض ليتناسب مع الخلفية */
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* From Uiverse.io by nikk7007 */ 
+.btn {
+    --color: #5383c2; /* الأزرق الذي نستخدمه في التصميم */
+    --color2: #ffffff; /* النص الأبيض عند التمرير */
+    padding: 0.8em 1.75em;
+    margin: 20px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: .3px solid var(--color);
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 17px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+    
+}
+
+.btn::after, .btn::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color);
+}
+
+.btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+    color: var(--color2);
+}
+
+.btn:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+}
+
+
+/* تحسين التصميم على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .page {
+        width: 90%;
+        padding: 30px;
+    }
+
+    button {
+        width: auto;
+        padding: 14px 20px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+}
+
+/* From Uiverse.io by eslam-hany */ 
+.inputbox {
+  position: relative;
+  width: 196px;
+  height: 50px;
+  margin-top: -5px; /* رفع المربع للأعلى قليلاً */
+}
+
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+  color: #f1f2f4;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0.75em; /* تعديل الفاصلة لتكون نقطة */
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #0f6fe5;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~ i,
+.inputbox input:focus ~ i {
+  height: 44px;
+}
+ul {
+  list-style: none;
+}
+
+
+.navbar {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .results-container {
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+/* باقي التنسيق */
+body {
+    background: url('DNA.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .sidebar a {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Genetic Prediction System</title>
+    <link rel="stylesheet" href="results.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- حاوية النتائج -->
+    <div class="results-container">
+        <h1>Prediction Results</h1>
+
+        <!-- عرض النتائج في جدول غير قابل للتعديل -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Predicted Information</th>
+                    <th>Value</th> <!-- العنوان الثاني للنصف الثاني -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Associated Diseases</td>
+                    <td><input type="text" class="input-field" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>Mutation Effect</td>
+                    <td><input type="text" class="input-field" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>Lifestyle Factor</td>
+                    <td><input type="text" class="input-field" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>Environmental Exposure</td>
+                    <td><input type="text" class="input-field" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>Tissue-specific Expression</td>
+                    <td><input type="text" class="input-field" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>Ethnicity</td>
+                    <td><input type="text" class="input-field" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>Inheritance Pattern</td>
+                    <td><input type="text" class="input-field" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>Mutation type </td>
+                    <td><input type="text" class="input-field" value="" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+          <button class="btn" onclick="window.location.href='data-entry.html';" >Go Back</button>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data-entry.html">About</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="setting.html">Settings</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

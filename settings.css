@@ -1,0 +1,133 @@
+/* خلفية وتصميم الصفحة */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url('DNA.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #efe8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* تنسيق الجداول داخل الحاوية */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: centre;
+    border: 1px solid #ddd;
+    word-wrap: break-word; /* تقسيم النص إذا كان طويلاً */
+    overflow-wrap: break-word; /* تقسيم النص إذا كان طويلاً */
+    max-width: 200px; /* تحديد الحد الأقصى لعرض الخلية */
+    white-space: normal; /* السماح بتوزيع النص على عدة أسطر */
+}
+
+input[type="text"] {
+    padding: 15px;
+    border-radius: 5px;
+    background-color:transparent; /* الشفافية للخلفية */
+    color: #333; /* لون النص */
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #333; /* لون خلفية الهيد */
+    color: white; /* لون النص في الهيد */
+}
+
+input[type="text"]:read-only {
+    background-color: transparent; /* جعل الحقول الشفافة تظهر بشكل أوضح */
+    opacity: 0.9;
+    color: #333;
+}
+
+/* حاوية النتائج */
+.settings-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* تقليل غمقان الخلفية بنسبة 0.7 */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    max-width: 800px; /* تعديل الحجم */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.navbar {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .results-container {
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+/* باقي التنسيق */
+body {
+    background: url('DNA.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .sidebar a {
+        font-size: 18px;
+    }
+}
